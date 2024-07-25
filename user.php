@@ -14,6 +14,7 @@ if (empty($result)) {
 }
 
 include './partials/sticky.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +23,15 @@ include './partials/sticky.php';
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="./public/img/favicon.ico">
 	<link rel="stylesheet" href="./public/css/rss.css" />
 	<link rel="stylesheet" href="./public/css/style.css" />
 	<link rel="stylesheet" href="./public/css/pages.css" />
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 
 	<title>Thông tin người dùng</title>
 	<style>
@@ -104,3 +111,4 @@ include './partials/sticky.php';
 </body>
 
 </html>
+<?php include './partials/footer.php'; ?>

@@ -1,4 +1,6 @@
  <!-- cuoi -->
+ <hr width="80%" style="margin: auto; " height="30px">
+
  <div class="footer">
  	<div class="grid_full-width">
  		<div class="grid">
@@ -19,10 +21,7 @@
  					<div class="footer__text">
  						<a href="https://maps.app.goo.gl/166vevaGWxz9Fuze9">193 Đỗ Văn Thi, Phường, Thành phố Biên Hòa, Đồng Nai
  							700000, Việt Nam</a>
- 						<iframe width="100%" height="50%"
- 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11343.901336392995!2d106.83472667155728!3d10.945154558059988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174dffcc5ecddb9%3A0xc8971ea2ed8e08a1!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYyBjxqEgc-G7nyDEkOG7k25nIE5haQ!5e0!3m2!1svi!2s!4v1721435596958!5m2!1svi!2s"
- 							width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
- 							referrerpolicy="no-referrer-when-downgrade"></iframe>
+ 						<iframe width="100%" height="50%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11343.901336392995!2d106.83472667155728!3d10.945154558059988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174dffcc5ecddb9%3A0xc8971ea2ed8e08a1!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYyBjxqEgc-G7nyDEkOG7k25nIE5haQ!5e0!3m2!1svi!2s!4v1721435596958!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
  					</div>
  				</div>
  				<div class="col col-4 col-mobi">
