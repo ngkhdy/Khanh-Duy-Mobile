@@ -40,14 +40,14 @@ if(mysqli_num_rows($result) === 1 ){
     $id = $each['id'];
     $name = $each['name'];
     $sql = "DELETE from forgot_password
-    where `customer_id ` = '$id'";
+    where `customer_id` = '$id'";
     mysqli_query($connect, $sql);
     $token = uniqid();
     $sql = "INSERT INTO forgot_password(customer_id ,token)
     VALUES('$id', '$token')";
     mysqli_query($connect, $sql);
 
-    $link =  current_url() . '/phpnew/change_new_password.php?token='.$token;
+    $link =  current_url() . '/change_new_password.php?token='.$token;
     require './sendmail/server/send-mail.php';
     $title = "Change New Password";
     $content = "Bấm vào đây để mật khẩu của bạn trở nên mới lạ <a href='$link' >Click ngay hiệu lực trong 30s</a>";
