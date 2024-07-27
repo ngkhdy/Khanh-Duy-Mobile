@@ -3,7 +3,7 @@
 		<?php include './partials/menu.php' ?>
 		<div class="grid_full-width content">
 			<div class="content__brands">
-				<?php include './partials/slider.php' ?>
+
 				<div class="grid">
 					<?php if (!empty(mysqli_fetch_array($result))) { ?>
 						<div class="row">

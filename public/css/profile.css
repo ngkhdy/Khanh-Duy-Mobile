@@ -1,0 +1,123 @@
+.box-space {
+	height: 7px;
+
+}
+
+.container {
+	margin: 70px auto;
+	width: 1028px;
+
+}
+
+/* user */
+.user_n {
+	width: 1020px;
+	border: 1px solid rgb(186, 179, 179);
+	margin: 10px auto;
+	padding: 25px;
+	display: flex;
+	justify-content: center;
+
+
+}
+
+.user-box1 {
+	text-align: center;
+
+}
+
+.user-box1 img {
+	width: 150px;
+	border-radius: 80px;
+	margin-bottom: 30px;
+}
+
+
+.user-box2 form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.use-tb {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.use-tb label {
+	font-size: 15px;
+}
+
+.use-tb tr {
+	height: 50px;
+}
+
+.user-box2 {
+	width: 500px;
+	margin-left: 50px;
+	padding-left: 50px;
+	border-left: 1px solid rgb(201, 192, 192);
+	line-height: 50px;
+}
+
+.user-box2 tr td label {
+	text-align: right;
+}
+
+.user-box2 tr td div input {
+	align-items: center;
+	border: 1px solid rgba(0, 0, 0, .14);
+	border-radius: 2px;
+	box-shadow: inset 0 2px 0 rgba(0, 0, 0, .02);
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: flex;
+	height: 40px;
+	overflow: hidden;
+	width: 300px;
+	padding-left: 10px;
+}
+
+.sua-user {
+	margin-left: 20px;
+	color: rgb(0, 157, 255);
+}
+
+
+.sua-user:hover {
+	color: rgb(0, 0, 255);
+}
+
+.bt-user {
+	margin-top: 20px;
+	width: 70px;
+	height: 40px;
+	border: 0px solid;
+	background-color: orangered;
+	color: white;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.bt-user:hover {
+	background-color: rgb(199, 53, 0);
+}
+
+.bt-mk {
+	margin-top: 20px;
+	margin-left: 30px;
+	width: 150px;
+	height: 40px;
+	border: 0px solid;
+	background-color: rgb(0, 26, 255);
+	color: white;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.bt-mk:hover {
+	background-color: rgb(0, 0, 174);
+
+}

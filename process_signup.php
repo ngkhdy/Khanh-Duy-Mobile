@@ -15,10 +15,10 @@ where email = '$email'";
 $result = mysqli_query($connect, $sql);
 $number_rows = mysqli_fetch_array($result)['count(*)'];
 
-if($number_rows == 1){
-    $_SESSION['error'] = 'Email này đã tồn tại!';
-    header('location:signup.php');
-    exit;
+if ($number_rows == 1) {
+	$_SESSION['error'] = 'Email này đã tồn tại!';
+	header('location:signup.php');
+	exit;
 }
 
 $sql = "INSERT INTO customers(name, email, password, phone, gender, address)
