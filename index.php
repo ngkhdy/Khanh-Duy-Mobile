@@ -41,32 +41,32 @@ session_start();
 	<script src="./public/js/js.js"></script>
 	<script src="./public/js/slider.js"></script>
 	<script type="text/javascript">
-	$(document).ready(function() {
-		$(".btn-add-to-cart").click(function() {
-			let id = $(this).data('id');
-			// alert("Add to cart" + id);
-			$.ajax({
-					url: 'add_to_cart.php',
-					type: 'GET',
-					// dataType:'',
-					data: {
-						id
-					},
-				})
-				.done(function(response) {
-					console.log("success");
-					if (response == 1) {
-						alert('Thêm giỏ hàng thành công');
-					} else {
-						alert(response);
-					}
-				});
+		$(document).ready(function() {
+			$(".btn-add-to-cart").click(function() {
+				let id = $(this).data('id');
+				// alert("Add to cart" + id);
+				$.ajax({
+						url: 'add_to_cart.php',
+						type: 'GET',
+						// dataType:'',
+						data: {
+							id
+						},
+					})
+					.done(function(response) {
+						console.log("success");
+						if (response == 1) {
+							alert('Thêm giỏ hàng thành công');
+						} else {
+							alert(response);
+						}
+					});
+			});
 		});
-	});
 
-	function Suc() {
-		return alert("Thêm giỏ hàng thành công!");
-	}
+		function Suc() {
+			return alert("Thêm giỏ hàng thành công!");
+		}
 	</script>
 	<script src="./public/js/live-searchs.js"></script>
 

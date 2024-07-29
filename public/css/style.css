@@ -362,6 +362,7 @@ input, textarea, button {
 
 .content__brands {
 	max-width: 730px;
+	height: 100px;
 }
 
 .slider-wrap {
