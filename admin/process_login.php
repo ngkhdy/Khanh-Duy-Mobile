@@ -26,17 +26,17 @@ $password = strip_tags($password);
 
 //validate
 
-// if (empty($_POST['email']) || empty($_POST['password'])) {
-//     $_SESSION['error'] = 'Anh bạn à đừng hack nữa nhà mình còn gì đâu!!';
-//     header('location:login.php');
-//     exit;
-// }
+if (empty($_POST['email']) || empty($_POST['password'])) {
+    $_SESSION['error'] = 'Anh bạn à đừng hack nữa nhà mình còn gì đâu!!';
+    header('location:login.php');
+    exit;
+}
 
-// if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-//     $_SESSION['error'] = 'Vui lòng nhập đúng định dạng email';
-//     header('location:index.php');
-//     exit;
-// }
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $_SESSION['error'] = 'Vui lòng nhập đúng định dạng email';
+    header('location:index.php');
+    exit;
+}
 
 
 $sql = "SELECT * from admins
