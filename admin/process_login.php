@@ -4,19 +4,19 @@ session_start();
 
 // Phòng chống SQL Injection
 
-// if (isset($_POST)) {
-//     foreach ($_POST as $index => $value) {
-//         if (is_string($_POST[$index]))
-//             $_POST[$index] = htmlspecialchars($_POST[$index], ENT_QUOTES, "UTF-8");
-//     }
-// }
+if (isset($_POST)) {
+    foreach ($_POST as $index => $value) {
+        if (is_string($_POST[$index]))
+            $_POST[$index] = htmlspecialchars($_POST[$index], ENT_QUOTES, "UTF-8");
+    }
+}
 
-// if (isset($_GET)) {
-//     foreach ($_GET as $index => $value) {
-//         if (is_string($_GET[$index]))
-//             $_GET[$index] = htmlspecialchars($_GET[$index], ENT_QUOTES, "UTF-8");
-//     }
-// }
+if (isset($_GET)) {
+    foreach ($_GET as $index => $value) {
+        if (is_string($_GET[$index]))
+            $_GET[$index] = htmlspecialchars($_GET[$index], ENT_QUOTES, "UTF-8");
+    }
+}
 
 
 $email = $_POST['email'];
