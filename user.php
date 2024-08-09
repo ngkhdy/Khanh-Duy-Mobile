@@ -78,13 +78,13 @@ $orders = mysqli_fetch_all($order_result, MYSQLI_ASSOC);
 						<tr>
 							<td><label for="username">Tên người dùng: </label></td>
 							<td>
-								<div class="ten-user"><input type="text" name="username" placeholder="" value="<?php echo htmlspecialchars($user['name']); ?>"></div>
+								<div class="ten-user"><input type="text" name="username" placeholder="" value="<?php echo htmlspecialchars($user['name']); ?>" ></div>
 							</td>
 						</tr>
 						<tr>
 							<td><label for="email">Email:</label></td>
 							<td>
-								<div class="email-user"><input type="text" name="email" placeholder="" value="<?php echo htmlspecialchars($user['email']); ?>"></div>
+								<div class="email-user"><input type="text" name="email" placeholder="" value="<?php echo htmlspecialchars($user['email']); ?>" readonly></div>
 							</td>
 						</tr>
 						<tr>

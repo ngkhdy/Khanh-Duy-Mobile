@@ -2,7 +2,6 @@
 
 require 'admin/root.php';
 
-// Kiểm tra kết nối cơ sở dữ liệu
 if (!$connect) {
 	die("Connection failed: " . mysqli_connect_error());
 }
@@ -51,10 +50,10 @@ if (!$result) {
 					</div>
 				</div>
 				<div class="grid">
-					<div class="row row-category">
+					<div class="row row-category ">
 						<?php foreach ($result as $each) : ?>
 							<div class="col col-3 col-2-mt mt-10">
-								<div class="category">
+								<div class="category product">
 									<a href="view_detail.php?id=<?php echo $each['id']; ?>" class="category_link">
 										<div class="category__img">
 											<img src="admin/products/server/uploads/<?php echo $each['photo']; ?>" alt="">

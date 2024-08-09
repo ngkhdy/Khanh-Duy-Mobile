@@ -1,0 +1,6 @@
+[31-Jul-2024 12:04:22 UTC] PHP Warning:  Undefined array key "lever" in /home/qof8ecixsb37/public_html/admin/check_super_admin_login.php on line 3
+[31-Jul-2024 12:04:22 UTC] PHP Warning:  Undefined array key "lever" in /home/qof8ecixsb37/public_html/admin/partials/sidebar_view.php on line 25
+[31-Jul-2024 12:04:22 UTC] PHP Warning:  Undefined array key "fullname" in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 215
+[08-Aug-2024 11:21:49 UTC] PHP Warning:  Undefined array key "lever" in /home/qof8ecixsb37/public_html/admin/check_super_admin_login.php on line 3
+[08-Aug-2024 11:21:49 UTC] PHP Warning:  Undefined array key "lever" in /home/qof8ecixsb37/public_html/admin/partials/sidebar_view.php on line 25
+[08-Aug-2024 11:21:49 UTC] PHP Warning:  Undefined array key "fullname" in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 215

@@ -2,7 +2,7 @@
 session_start();
 
 require 'admin/root.php';
-$search_products = $_POST['search'];
+$search_products = trim(strip_tags(addslashes($_POST['search'])));
 
 if($search_products == ''){
   $search_products = '###';

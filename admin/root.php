@@ -1,6 +1,6 @@
 <?php
 
-$connect = mysqli_connect('localhost', 'root', '', 'db_phppure-master');
+$connect = mysqli_connect('localhost', 'root', '', 'qof8ecixsb37_khanhduymobile');
 mysqli_set_charset($connect, 'UTF8');
 
 if ($connect === false) {
