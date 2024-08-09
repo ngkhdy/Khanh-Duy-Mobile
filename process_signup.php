@@ -27,8 +27,8 @@ mysqli_query($connect, $sql);
 
 require './sendmail/server/send-mail.php';
 $title = "Đăng ký thành công";
-$content = "Chào bạn đến với Shop zero còn muốn bay ac thì bấm vô tại đây:
-<a href='https://www.google.com'>Link uy tín</a>";
+$content = "Chào mừng bạn đến với KDY Shop còn muốn bay acc thì bấm vô tại đây:
+<a href='https://kdy.id.vn/'>Link uy tín</a>";
 
 mySendMail($email, $title, $name, $content);
 
@@ -41,4 +41,4 @@ $_SESSION['name'] = $name;
 
 mysqli_close($connect);
 $_SESSION['success'] = "Tài khoản đăng ký thành công";
-header('location:signup.php');
+header('location:signup.php?success=1');
