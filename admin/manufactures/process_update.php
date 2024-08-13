@@ -1,7 +1,7 @@
 <?php
 
 require '../root.php';
-require '../check_super_admin_login.php'; 
+require '../check_super_admin_login.php';
 
 $id = $_POST['id'];
 
@@ -17,16 +17,14 @@ $photo = addslashes($_POST['photo']);
 $photo = strip_tags($photo);
 $rules = $_POST['rules'];
 
-if(empty($_POST['id'])){
-    header('location:form_update.php?error= Phải điền mã để sửa');
-}elseif(empty($_POST['name']) || empty($_POST['address']) || empty($_POST['phone']) || empty($_POST['photo'])){
-    header("location:form_update.php?id=$id&error= Phải điền đủ thông tin");
-}else{
-    $sql = "SELECT * from manufactures
+if (empty($_POST['id'])) {
+	header('location:form_update.php?error= Phải điền mã để sửa');
+} elseif (empty($_POST['name']) || empty($_POST['address']) || empty($_POST['phone']) || empty($_POST['photo'])) {
+	header("location:form_update.php?id=$id&error= Phải điền đủ thông tin");
+} else {
+	$sql = "SELECT * from manufactures
     where `name` = '$name'";
-    $result = mysqli_query($connect, $sql);
-
-    $sql = "UPDATE `manufactures`
+	$sql = "UPDATE `manufactures`
     SET
     name = '$name',
     address = '$address',
@@ -34,12 +32,9 @@ if(empty($_POST['id'])){
     photo = '$photo',
     rules = '$rules'
     WHERE id = '$id'";
-    mysqli_query($connect, $sql);
+	mysqli_query($connect, $sql);
+	header('location:index.php?success=Sửa thành công');
+	exit;
 }
 
-if(!(mysqli_num_rows($result) == 1)){
-    header('location:index.php?success= Sửa thành công');
-}else{
-    header('location:index.php?error=Tên nhà sản xuất đã tồn tại');
-}
 mysqli_close($connect);

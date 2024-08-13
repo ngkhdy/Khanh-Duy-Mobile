@@ -16,7 +16,7 @@ if (!empty($_GET['id'])) {
 	if (!empty($_POST['content'])) {
 		$content = trim(addslashes($_POST['content']));
 		if (isset($_SESSION['id'])) {
-			if (strlen($_POST['content']) < 6) {
+			if (strlen($_POST['content']) 	 < 6) {
 				$_SESSION['error'] = 'Bình luận của bạn quá ngắn. Vui lòng nhập bình luận';
 			} else {
 				$sql = "SELECT * fROM customers where id = '" . $_SESSION['id'] . "'";
@@ -125,13 +125,13 @@ if (!empty($_GET['lap_id'])) {
 	<script src="./public/js/slider.js"></script>
 	<script src="./public/js/live-searchs.js"></script>
 	<script>
-		function Onc() {
-			return confirm("Bạn phải đăng nhập vào shop mới mua được sản phẩm!")
-		}
+	function Onc() {
+		return confirm("Bạn phải đăng nhập vào shop mới mua được sản phẩm!")
+	}
 
-		function Cmt() {
-			return confirm("Bạn phải đăng nhập vào shop mới bình luận được sản phẩm!")
-		}
+	function Cmt() {
+		return confirm("Bạn phải đăng nhập vào shop mới bình luận được sản phẩm!")
+	}
 	</script>
 
 </body>

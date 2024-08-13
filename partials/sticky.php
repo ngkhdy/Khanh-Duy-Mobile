@@ -4,8 +4,8 @@
 		<header class="header-top">
 			<div class="logo">
 				<a href="index.php">
-					<img width="40px" src="./public/img/logo1.png" alt="" class="img">
-				</a>6
+					<img height="100%" src="./public/img/logo1.png" alt="" class="img">
+				</a>
 			</div>
 			<div class="header__search">
 				<form style="background-color: #fff; border-radius: 3px;" action="search.php" method="post">

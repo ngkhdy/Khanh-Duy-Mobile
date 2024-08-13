@@ -7,7 +7,7 @@
  			<div class="row">
  				<div class="col col-4 col-mobi">
  					<div class="logo logo-bottom ml-mobi">
- 						<img width="40px" src="./public/img/logo1-2.png" alt="" class="img">
+ 						<img height="100%" src="./public/img/logo1-2.png" alt="" class="img">
  					</div>
  					<div class="footer__text ml-mobi">
  						<p>Khánh Duy Mobile thành lập năm 2025. Chúng
@@ -54,7 +54,7 @@
  <div class="header">
  	<div class="header-container">
  		<header class="header-bottom">
- 			<span>2018 ©
+ 			<span>2024 ©
  			</span>
  		</header>
  	</div>
