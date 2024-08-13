@@ -4,26 +4,27 @@ session_start();
 
 require 'admin/root.php';
 $id_order = $_SESSION['id'];
-
+if (empty($id_order)) {
+	header('location:index.php');
+	exit();
+}
 $sql = "SELECT order_detail.quantity as quantity,
 orders.status as status,
 orders.id as id,
 orders.total_price as total_price,
 products.id as product_id,
 products.name as name_product,
-products.photo as image_product,
-product_laptop.id as product_lp_id,
-product_laptop.name as name_lp_product,
-product_laptop.photo as image_lp_product
+products.photo as image_product
+
 FROM order_detail
 LEFT JOIN orders on orders.id = order_detail.order_id
 LEFT JOIN products on products.id = order_detail.product_id
-LEFT JOIN product_laptop on product_laptop.id = order_detail.product_lp_id
+
 WHERE orders.customer_id = '$id_order' ORDER BY `orders`.`id` DESC";
 $result = mysqli_query($connect, $sql);
 
-if(empty($id_order)) {
-    header('location:index.php');
+if (empty($id_order)) {
+	header('location:index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -58,9 +59,9 @@ if(empty($id_order)) {
 	<script src="./public/js/slider.js"></script>
 	<script src="./public/js/live-search.js"></script>
 	<script>
-	function Cancel() {
-		return confirm("Bạn có chắc hủy đơn sản phẩm ??");
-	}
+		function Cancel() {
+			return confirm("Bạn có chắc hủy đơn sản phẩm ??");
+		}
 	</script>
 </body>
 

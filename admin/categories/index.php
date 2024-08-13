@@ -1,12 +1,11 @@
 <?php
 require '../root.php';
 require '../check_super_admin_login.php';
-
 $search = trim($_GET['search'] ?? null);
 
-$sqlPt = "SELECT count(id) as total FROM manufactures
+$sqlPt = "SELECT count(id) as total FROM categories
     WHERE
-    name LIKE '%$search%'";
+    category_name LIKE '%$search%'";
 
 $arrayNum = mysqli_query($connect, $sqlPt);
 $row = mysqli_fetch_assoc($arrayNum);
@@ -25,10 +24,10 @@ if ($current_page > $total_page) {
 
 $start = ($current_page - 1) * $limit;
 
-$sql = "SELECT * FROM `manufactures`
+$sql = "SELECT * FROM `categories`
         WHERE
-        manufactures.name LIKE '%$search%'
-        LIMIT $limit offset $start";
+        category_name LIKE '%$search%'
+        LIMIT $limit OFFSET $start";
 $result = mysqli_query($connect, $sql);
 if (empty($result)) {
 	header('location:../partials/404.php');
@@ -43,7 +42,7 @@ if (empty($result)) {
 	<?php
 	include '../partials/head_view.php';
 	?>
-	<title>Admin - manufacture</title>
+	<title>Admin - Categories</title>
 
 </head>
 
@@ -55,13 +54,12 @@ if (empty($result)) {
 		<?php
 		require '../menu.php';
 		?>
-
-		<h5 class="text-left mt-3">Quản lý nhãn hàng</h5>
+		<h5 class="text-left mt-3">Quản lý loại sản phẩm</h5>
 		<div class="row p-2">
 			<a class="btn btn-primary ml-2" href="form_insert.php"> Thêm </a>
 			<a class="btn btn-primary ml-2" href="index.php"> View all </a>
 			<form class="input-group ml-auto" style="width: 50%;">
-				<input class="form-control" type="search" placeholder="Tìm kiếm tên thương hiệu..." name="search" value="<?php echo $search ?>">
+				<input class="form-control" type="search" placeholder="Tìm kiếm tên Loại..." name="search" value="<?php echo $search ?>">
 			</form>
 		</div>
 		<div class="row mt-3">
@@ -71,11 +69,8 @@ if (empty($result)) {
 						<thead class="thead-dark">
 							<tr>
 								<th>#</th>
-								<th>Tên</th>
-								<th>Nhà phân phối</th>
-								<th>Địa chỉ</th>
-								<th>Điện thoại</th>
-								<th>Ảnh</th>
+								<th>Tên Loại</th>
+								<th>Mô Tả</th>
 								<th>Sửa</th>
 								<th>Xóa</th>
 							</tr>
@@ -84,26 +79,14 @@ if (empty($result)) {
 							<?php foreach ($result as $each) : ?>
 								<tr>
 									<td class="text-primary"><?php echo $each['id']; ?></td>
-									<td><?php echo $each['name']; ?></td>
-									<?php if ($each['rules'] == 0) : ?>
-										<td>Nhà máy ngừng hoạt động</td>
-									<?php elseif ($each['rules'] == 1) : ?>
-										<td>Điện thoại</td>
-									<?php elseif ($each['rules'] == 2) : ?>
-										<td>Máy tính xách tay</td>
-									<?php elseif ($each['rules'] == 3) : ?>
-										<td>Điện thoại, Máy tính xách tay</td>
-									<?php endif ?>
-									<td class="text-capitalize text-primary"><?php echo $each['address']; ?></td>
-									<td class="text-primary"><?php echo $each['phone']; ?></td>
-									<td>
-										<img height="100" src="<?php echo $each['photo']; ?>">
-									</td>
+									<td class="text-capitalize text-primary"><?php echo $each['category_name']; ?></td>
+									<td class="text-primary">
+										<?php echo $each['description']; ?></td>
 									<td>
 										<a class="btn btn-info" href="form_update.php?id=<?php echo $each['id']; ?>">Sửa</a>
 									</td>
 									<td>
-										<a onclick="return Del('<?php echo $each['name']; ?>')" class="btn btn-danger" href="delete.php?id=<?php echo $each['id']; ?>">Xóa</a>
+										<a onclick="return Del('<?php echo $each['category_name']; ?>')" class="btn btn-danger" href="delete.php?id=<?php echo $each['id']; ?>">Xóa</a>
 									</td>
 								</tr>
 							<?php endforeach ?>

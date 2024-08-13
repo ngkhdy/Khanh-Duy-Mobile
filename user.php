@@ -125,19 +125,17 @@ $orders = mysqli_fetch_all($order_result, MYSQLI_ASSOC);
 			orders.total_price as total_price,
 			products.id as product_id,
 			products.name as name_product,
-			products.photo as image_product,
-			product_laptop.id as product_lp_id,
-			product_laptop.name as name_lp_product,
-			product_laptop.photo as image_lp_product
+			products.photo as image_product
+
 			FROM order_detail
 			LEFT JOIN orders on orders.id = order_detail.order_id
 			LEFT JOIN products on products.id = order_detail.product_id
-			LEFT JOIN product_laptop on product_laptop.id = order_detail.product_lp_id
-			WHERE orders.customer_id = '$id_order' ORDER BY `orders`.`id` DESC";
-			$result = mysqli_query($connect, $sql);
 
-			if (empty($id_order)) {
-				header('location:index.php');
+			WHERE orders.customer_id = '$id' ORDER BY `orders`.`id` DESC";
+
+			$result = mysqli_query($connect, $sql);
+			if (mysqli_num_rows($result) > 0) {
+				echo ('éo có đơn hàng');
 			}
 			?>
 
@@ -162,10 +160,6 @@ $orders = mysqli_fetch_all($order_result, MYSQLI_ASSOC);
 											<?php if (!empty($each['name_product']) || !empty($each['image_product'])) : ?>
 												<img height="200" src="admin/products/server/uploads/<?php echo $each['image_product'] ?>" alt="">
 												<p><?php echo $each['name_product'] ?></p>
-											<?php endif ?>
-											<?php if (!empty($each['name_lp_product']) || !empty($each['image_lp_product'])) : ?>
-												<img height="200" src="admin/product_laptop/server/uploads/<?php echo $each['image_lp_product'] ?>" alt="">
-												<p><?php echo $each['name_lp_product'] ?></p>
 											<?php endif ?>
 										</div>
 										<div class="col-table-p col-table-2">
@@ -205,7 +199,9 @@ $orders = mysqli_fetch_all($order_result, MYSQLI_ASSOC);
 							</div>
 						</div>
 					</div>
-				<?php } else { ?>
+				<?php
+
+				} else { ?>
 					<div class="row">
 						<div class="col col-full">
 							<div class="grid table_cart-info">

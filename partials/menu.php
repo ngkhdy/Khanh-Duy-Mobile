@@ -1,47 +1,39 @@
 <?php
 
-$sql = "SELECT * FROM `manufactures` WHERE rules <= 1";
-$result_m = mysqli_query($connect, $sql);
-
-$sql = "SELECT * FROM `manufactures` WHERE rules = 2";
-$result_ml = mysqli_query($connect, $sql);
+// Lấy tất cả các danh mục
+$sql = "SELECT * FROM `categories`";
+$result_categories = mysqli_query($connect, $sql);
 
 ?>
+
 <nav class="menu">
 	<ul class="menu-list">
-		<li class="menu-item">
-			<a>Điện Thoại</a>
-			<ul class="menu-list-child">
-				<?php foreach ($result_m as $each_m) : ?>
-					<li class="menu-item">
-						<a href="view_brand.php?mb=<?php echo $each_m['name'] ?>">
-							<?php echo $each_m['name'] ?>
-						</a>
-					</li>
-				<?php endforeach ?>
-			</ul>
-		</li>
-
-		<li class="menu-item">
-			<a href="#">Laptop</a>
-			<ul class="menu-list-child">
-				<?php foreach ($result_ml as $each_ml) : ?>
-					<li class="menu-item">
-						<a href="view_brand.php?lp=<?php echo $each_ml['name'] ?>">
-							<?php echo $each_ml['name'] ?>
-						</a>
-					</li>
-				<?php endforeach ?>
-			</ul>
-		</li>
-
+		<?php while ($category = mysqli_fetch_assoc($result_categories)) : ?>
+			<?php
+			// Lấy các nhà sản xuất theo danh mục hiện tại
+			$category_id = $category['id'];
+			$sql = "SELECT * FROM `manufactures` WHERE rules = $category_id";
+			$result_manufactures = mysqli_query($connect, $sql);
+			?>
+			<li class="menu-item">
+				<a><?php echo $category['category_name']; ?></a>
+				<ul class="menu-list-child">
+					<?php foreach ($result_manufactures as $each_manufacture) : ?>
+						<li class="menu-item">
+							<a href="view_brand.php?brand=<?php echo $each_manufacture['name']; ?>">
+								<?php echo $each_manufacture['name']; ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</li>
+		<?php endwhile; ?>
 		<li class="menu-item">
 			<a href="#">Blog</a>
 		</li>
 		<li class="menu-item">
 			<a href="#">Liên hệ</a>
 		</li>
-
 		<li class="menu-item">
 			<a href="#">Hỗ trợ</a>
 		</li>

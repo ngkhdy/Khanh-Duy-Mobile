@@ -35,25 +35,21 @@
 		<?php } ?>
 
 	</li>
-
+	<li class="nav-item active">
+		<a class="nav-link" href="../categories/index.php">
+			<i class="fas fa-fw fa-tachometer-alt"></i>
+			<span>Loại Sản Phẩm</span></a>
+	</li>
 	<li class="nav-item active">
 		<a class="nav-link" href="../products/index.php">
 			<i class="fas fa-fw fa-tachometer-alt"></i>
 			<span>Sản Phẩm</span></a>
 	</li>
-
-	<li class="nav-item active">
-		<a class="nav-link" href="../product_laptop/index.php">
-			<i class="fas fa-fw fa-tachometer-alt"></i>
-			<span>Sản Phẩm (Laptop)</span></a>
-	</li>
-
 	<li class="nav-item active">
 		<a class="nav-link" href="../orders/index.php">
 			<i class="fas fa-fw fa-tachometer-alt"></i>
 			<span>Đơn hàng</span></a>
 	</li>
-
 	<li class="nav-item active">
 		<a class="nav-link" href="../categoris/index.php">
 			<i class="fas fa-fw fa-tachometer-alt"></i>

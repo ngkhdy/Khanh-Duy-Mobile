@@ -27,20 +27,29 @@ $start = ($current_page - 1) * $limit;
 
 
 $sql = "SELECT
-        products.*,
-        manufactures.name  as manufactures_name
-        FROM `products`
-        JOIN manufactures on products.manufacturer_id = manufactures.id
-        WHERE
-        products.name LIKE '%$search%'
-        ORDER BY products.id DESC
-        LIMIT $limit offset $start";
+    products.*,
+    manufactures.name as manufactures_name,
+    categories.category_name as category_name
+FROM
+    products
+JOIN
+    manufactures ON products.manufacturer_id = manufactures.id
+JOIN
+    categories ON products.category_id = categories.id
+WHERE
+    products.name LIKE '%$search%'
+ORDER BY
+    products.id DESC
+LIMIT
+    $limit OFFSET $start;
+";
 $result = mysqli_query($connect, $sql);
 if (empty($result)) {
 	header('location:../partials/404.php');
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,6 +89,9 @@ if (empty($result)) {
 								<th>Tên</th>
 								<th>Ảnh</th>
 								<th>Giá sản phẩm</th>
+
+								<th>Loại</th>
+
 								<th>Tên nhà sản xuất</th>
 								<th>Sửa</th>
 								<th>Xóa</th>
@@ -94,8 +106,9 @@ if (empty($result)) {
 										<img height="150" src="server/uploads/<?php echo $each['photo'] ?>" />
 									</td>
 									<td class="text-danger"> <?php echo currency_format($each['price']); ?></td>
-									<td class="text-primary"> <?php echo $each['manufactures_name']; ?></td>
 
+									<td class="text-primary"> <?php echo $each['category_name']; ?></td>
+									<td class="text-primary"> <?php echo $each['manufactures_name']; ?></td>
 									<td>
 										<a class="btn btn-info" href="form_update.php?id=<?php echo $each['id']; ?>">Sửa</a>
 									</td>

@@ -1,3 +1,4 @@
+
 <?php
 	session_start();
 
@@ -40,3 +41,4 @@
 	mysqli_close($connect);
 	$_SESSION['success'] = "Tài khoản đăng ký thành công";
 	header('location:signup.php?success=1');
+
