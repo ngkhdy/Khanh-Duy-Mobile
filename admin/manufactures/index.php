@@ -55,6 +55,7 @@ if (empty($result)) {
 		<?php
 		require '../menu.php';
 		?>
+
 		<h5 class="text-left mt-3">Quản lý nhãn hàng</h5>
 		<div class="row p-2">
 			<a class="btn btn-primary ml-2" href="form_insert.php"> Thêm </a>

@@ -45,14 +45,11 @@
 			<i class="fas fa-fw fa-tachometer-alt"></i>
 			<span>Sản Phẩm</span></a>
 	</li>
-
-
 	<li class="nav-item active">
 		<a class="nav-link" href="../orders/index.php">
 			<i class="fas fa-fw fa-tachometer-alt"></i>
 			<span>Đơn hàng</span></a>
 	</li>
-
 	<li class="nav-item active">
 		<a class="nav-link" href="../categoris/index.php">
 			<i class="fas fa-fw fa-tachometer-alt"></i>

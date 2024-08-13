@@ -48,7 +48,8 @@ if (mysqli_num_rows($result) === 1) {
     VALUES('$id', '$token')";
 	mysqli_query($connect, $sql);
 
-	$link =  current_url() . '/kdy/change_new_password.php?token=' . $token;
+	$link =  current_url() . '/change_new_password.php?token=' . $token;
+
 	require './sendmail/server/send-mail.php';
 	$title = "Change New Password";
 	$content = "Bấm vào đây để mật khẩu của bạn trở nên mới lạ <a href='$link' >Click ngay hiệu lực trong 30s</a>";

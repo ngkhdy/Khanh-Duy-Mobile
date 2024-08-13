@@ -1,7 +1,7 @@
 <?php 
 require 'admin/root.php';
 
-$search = trim(addslashes($_GET['term']));
+$search = trim(strip_tags(addslashes($_GET['term'])));
 
 $sql = "SELECT * from products where name like '%$search%' ";
 $result_mobi = mysqli_query($connect, $sql);

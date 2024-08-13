@@ -28,6 +28,10 @@ if (!empty($_GET['id'])) {
           ('$user_id', '$product_id', '0', '$content', now());
         ";
 				$query = mysqli_query($connect, $sql);
+
+				//reload page
+				header("Location: view_detail.php?id=$id&comment=success");
+
 			}
 		}
 	}
@@ -61,6 +65,10 @@ if (!empty($_GET['lap_id'])) {
           ('$user_id', '0', '$product_lap_id', '$content', now());
         ";
 				$query = mysqli_query($connect, $sql);
+
+				//reload page
+				header("Location: view_detail.php?lap_id=$brands&comment=success");
+
 			}
 		}
 	}

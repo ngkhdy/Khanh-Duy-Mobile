@@ -1,44 +1,44 @@
-																	<?php
-																	session_start();
 
-																	require 'admin/root.php';
+<?php
+	session_start();
 
-																	$name = trim(addslashes($_POST['name']));
-																	$email = trim(addslashes($_POST['email']));
-																	$password = md5(addslashes($_POST['password']));
-																	$phone = addslashes($_POST['phone']);
-																	$address = trim(addslashes($_POST['address']));
-																	$gender = $_POST['gender'];
+	require 'admin/root.php';
 
-																	$sql = "SELECT count(*) from customers
-where email = '$email'";
-																	$result = mysqli_query($connect, $sql);
-																	$number_rows = mysqli_fetch_array($result)['count(*)'];
+	$name = trim(addslashes($_POST['name']));
+	$email = trim(addslashes($_POST['email']));
+	$password = md5(addslashes($_POST['password']));
+	$phone = addslashes($_POST['phone']);
+	$address = trim(addslashes($_POST['address']));
+	$gender = $_POST['gender'];
 
-																	if ($number_rows == 1) {
-																		$_SESSION['error'] = 'Email này đã tồn tại!';
-																		header('location:signup.php');
-																		exit;
-																	}
+	$sql = "SELECT count(*) FROM customers WHERE email = '$email'";
+	$result = mysqli_query($connect, $sql);
+	$number_rows = mysqli_fetch_array($result)['count(*)'];
 
-																	$sql = "INSERT INTO customers(name, email, password, phone, gender, address)
-VALUES ('$name', '$email', '$password', '$phone', '$gender', '$address')";
-																	mysqli_query($connect, $sql);
+	if ($number_rows == 1) {
+		$_SESSION['error'] = 'Email này đã tồn tại!';
+		header('location:signup.php');
+		exit;
+	}
 
-																	require './sendmail/server/send-mail.php';
-																	$title = "Đăng ký thành công";
-																	$content = "Chào bạn đến với Shop zero còn muốn bay ac thì bấm vô tại đây:
-<a href='https://www.google.com'>Link uy tín</a>";
+	$sql = "INSERT INTO customers (name, email, password, phone, gender, address) 
+				VALUES ('$name', '$email', '$password', '$phone', '$gender', '$address')";
+	mysqli_query($connect, $sql);
 
-																	mySendMail($email, $title, $name, $content);
+	require './sendmail/server/send-mail.php';
+	$title = "Đăng ký thành công";
+	$content = "Chào mừng bạn đến với KDY Shop còn muốn bay acc thì bấm vô tại đây:
+		<a href='https://kdy.id.vn/'>Link uy tín</a>";
 
-																	$sql = "SELECT id from customers
-where email = '$email'";
-																	$result = mysqli_query($connect, $sql);
-																	$id = mysqli_fetch_array($result)['id'];
-																	$_SESSION['id'] = $id;
-																	$_SESSION['name'] = $name;
+	mySendMail($email, $title, $name, $content);
 
-																	mysqli_close($connect);
-																	$_SESSION['success'] = "Tài khoản đăng ký thành công";
-																	header('location:signup.php');
+	$sql = "SELECT id FROM customers WHERE email = '$email'";
+	$result = mysqli_query($connect, $sql);
+	$id = mysqli_fetch_array($result)['id'];
+	$_SESSION['id'] = $id;
+	$_SESSION['name'] = $name;
+
+	mysqli_close($connect);
+	$_SESSION['success'] = "Tài khoản đăng ký thành công";
+	header('location:signup.php?success=1');
+

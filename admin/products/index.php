@@ -89,7 +89,9 @@ if (empty($result)) {
 								<th>Tên</th>
 								<th>Ảnh</th>
 								<th>Giá sản phẩm</th>
+
 								<th>Loại</th>
+
 								<th>Tên nhà sản xuất</th>
 								<th>Sửa</th>
 								<th>Xóa</th>
@@ -104,6 +106,7 @@ if (empty($result)) {
 										<img height="150" src="server/uploads/<?php echo $each['photo'] ?>" />
 									</td>
 									<td class="text-danger"> <?php echo currency_format($each['price']); ?></td>
+
 									<td class="text-primary"> <?php echo $each['category_name']; ?></td>
 									<td class="text-primary"> <?php echo $each['manufactures_name']; ?></td>
 									<td>

@@ -98,6 +98,7 @@ if (!$resultCategories) {
 													</li>
 												</ul>
 											</div>
+
 										</div>
 									</div>
 
