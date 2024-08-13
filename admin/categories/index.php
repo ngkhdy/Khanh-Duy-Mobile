@@ -1,13 +1,11 @@
 <?php
-require '../check_admin_login.php';
 require '../root.php';
-
+require '../check_super_admin_login.php';
 $search = trim($_GET['search'] ?? null);
 
-$sqlPt = "SELECT count(manufactures.id) as total FROM advertise
-    JOIN manufactures on advertise.manufacturer_id = manufactures.id
+$sqlPt = "SELECT count(id) as total FROM categories
     WHERE
-    manufactures.name LIKE '%$search%'";
+    category_name LIKE '%$search%'";
 
 $arrayNum = mysqli_query($connect, $sqlPt);
 $row = mysqli_fetch_assoc($arrayNum);
@@ -26,16 +24,10 @@ if ($current_page > $total_page) {
 
 $start = ($current_page - 1) * $limit;
 
-
-$sql = "SELECT
-        advertise.*,
-        manufactures.name as manufactures_name
-        FROM `advertise`
-        JOIN manufactures on advertise.manufacturer_id = manufactures.id
+$sql = "SELECT * FROM `categories`
         WHERE
-        manufactures.name LIKE '%$search%'
-        ORDER BY `advertise`.`id` DESC
-        LIMIT $limit offset $start";
+        category_name LIKE '%$search%'
+        LIMIT $limit OFFSET $start";
 $result = mysqli_query($connect, $sql);
 if (empty($result)) {
 	header('location:../partials/404.php');
@@ -50,7 +42,7 @@ if (empty($result)) {
 	<?php
 	include '../partials/head_view.php';
 	?>
-	<title>Admin - advertise</title>
+	<title>Admin - Categories</title>
 
 </head>
 
@@ -62,12 +54,12 @@ if (empty($result)) {
 		<?php
 		require '../menu.php';
 		?>
-		<h5 class="text-left mt-3">Quản lý quảng bá sản phẩm</h5>
+		<h5 class="text-left mt-3">Quản lý loại sản phẩm</h5>
 		<div class="row p-2">
 			<a class="btn btn-primary ml-2" href="form_insert.php"> Thêm </a>
 			<a class="btn btn-primary ml-2" href="index.php"> View all </a>
 			<form class="input-group ml-auto" style="width: 50%;">
-				<input class="form-control" type="search" placeholder="Tìm kiếm tên nhà sản xuất..." name="search" value="<?php echo $search ?>">
+				<input class="form-control" type="search" placeholder="Tìm kiếm tên Loại..." name="search" value="<?php echo $search ?>">
 			</form>
 		</div>
 		<div class="row mt-3">
@@ -77,44 +69,24 @@ if (empty($result)) {
 						<thead class="thead-dark">
 							<tr>
 								<th>#</th>
-								<th>Ảnh</th>
-								<th>Tên nhà sản xuất</th>
-								<th>Quyền hạn</th>
+								<th>Tên Loại</th>
+								<th>Mô Tả</th>
 								<th>Sửa</th>
 								<th>Xóa</th>
 							</tr>
 						</thead>
 						<tbody class="thead-light">
 							<?php foreach ($result as $each) : ?>
-								<tr class="text-dark">
-									<td class="text-primary"> <?php echo $each['id']; ?></td>
-									<td>
-										<img height="100" src="server/uploads/<?php echo $each['photo'] ?>" />
-									</td>
-									<td class="text-primary"> <?php echo $each['manufactures_name']; ?></td>
+								<tr>
+									<td class="text-primary"><?php echo $each['id']; ?></td>
+									<td class="text-capitalize text-primary"><?php echo $each['category_name']; ?></td>
 									<td class="text-primary">
-										<?php
-										switch ($each['rules']) {
-											case '0':
-												echo '<span class="text-danger">Not active</span>';
-												break;
-											case '1':
-												echo '<span class="text-info">Active slide</span>';
-												break;
-											case '2':
-												echo '<span class="text-info">Active sidebar</span>';
-												break;
-											case '3':
-												echo '<span class="text-info">Active exclusivenes</span>';
-												break;
-										}
-										?>
-									</td>
+										<?php echo $each['description']; ?></td>
 									<td>
 										<a class="btn btn-info" href="form_update.php?id=<?php echo $each['id']; ?>">Sửa</a>
 									</td>
 									<td>
-										<a onclick="return Del()" class="btn btn-danger" href="delete.php?id=<?php echo $each['id']; ?>">Xóa</a>
+										<a onclick="return Del('<?php echo $each['category_name']; ?>')" class="btn btn-danger" href="delete.php?id=<?php echo $each['id']; ?>">Xóa</a>
 									</td>
 								</tr>
 							<?php endforeach ?>
@@ -134,8 +106,8 @@ if (empty($result)) {
 	?>
 
 	<script>
-		function Del() {
-			return confirm("Bạn có chắc muốn xóa mẫu quảng bá sản phẩm này!")
+		function Del(name) {
+			return confirm("Bạn có chắc muốn xóa sản phẩm: " + name + " ?")
 		}
 	</script>
 </body>

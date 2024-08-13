@@ -26,7 +26,7 @@ function mySendMail($email, $title, $name, $content)
         $mail->CharSet = "UTF-8";
 
         //Recipients
-        $mail->setFrom('namhg911@gmail.com', 'ShopAdu');
+        $mail->setFrom('namhg911@gmail.com', 'Mô Bai Sốp');
         $mail->addAddress($email, $name); // gui den ai 
         //Attachments
         //Content

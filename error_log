@@ -1,0 +1,38 @@
+[30-Jul-2024 06:10:28 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/qof8ecixsb37/public_html/admin/root.php on line 3
+[30-Jul-2024 06:10:28 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_set_charset(): Argument #1 ($mysql) must be of type mysqli, bool given in /home/qof8ecixsb37/public_html/admin/root.php:4
+Stack trace:
+#0 /home/qof8ecixsb37/public_html/admin/root.php(4): mysqli_set_charset()
+#1 /home/qof8ecixsb37/public_html/partials/container.php(3): require('/home/qof8ecixs...')
+#2 /home/qof8ecixsb37/public_html/index.php(28): include('/home/qof8ecixs...')
+#3 {main}
+  thrown in /home/qof8ecixsb37/public_html/admin/root.php on line 4
+[30-Jul-2024 06:10:30 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/qof8ecixsb37/public_html/admin/root.php on line 3
+[30-Jul-2024 06:10:30 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_set_charset(): Argument #1 ($mysql) must be of type mysqli, bool given in /home/qof8ecixsb37/public_html/admin/root.php:4
+Stack trace:
+#0 /home/qof8ecixsb37/public_html/admin/root.php(4): mysqli_set_charset()
+#1 /home/qof8ecixsb37/public_html/partials/container.php(3): require('/home/qof8ecixs...')
+#2 /home/qof8ecixsb37/public_html/index.php(28): include('/home/qof8ecixs...')
+#3 {main}
+  thrown in /home/qof8ecixsb37/public_html/admin/root.php on line 4
+[30-Jul-2024 07:57:43 UTC] PHP Warning:  Undefined array key "id" in /home/qof8ecixsb37/public_html/user.php on line 3
+[30-Jul-2024 10:07:27 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/process_signup.php on line 38
+[30-Jul-2024 10:11:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/view_detail.php on line 86
+[30-Jul-2024 10:11:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/detail/detail_product.php on line 12
+[30-Jul-2024 10:11:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/partials/breadcrumb.php on line 12
+[30-Jul-2024 10:11:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/detail/detail_product.php on line 25
+[30-Jul-2024 10:11:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/detail/detail_product.php on line 30
+[30-Jul-2024 10:11:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/detail/detail_product.php on line 31
+[30-Jul-2024 10:11:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/detail/detail_product.php on line 32
+[30-Jul-2024 10:11:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/detail/detail_product.php on line 36
+[30-Jul-2024 10:11:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/detail/detail_product.php on line 46
+[30-Jul-2024 10:11:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/detail/comments.php on line 5
+[30-Jul-2024 10:25:53 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/process_signup.php on line 38
+[31-Jul-2024 02:09:39 UTC] PHP Warning:  Undefined array key "id" in /home/qof8ecixsb37/public_html/user.php on line 3
+[31-Jul-2024 02:10:01 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/view_brand.php on line 47
+[31-Jul-2024 02:10:01 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/detail/detail_brand.php on line 51
+[02-Aug-2024 09:05:10 UTC] PHP Warning:  Undefined array key "id" in /home/qof8ecixsb37/public_html/info_order.php on line 6
+[02-Aug-2024 09:05:16 UTC] PHP Warning:  Undefined array key "id" in /home/qof8ecixsb37/public_html/user.php on line 3
+[03-Aug-2024 00:45:13 UTC] PHP Warning:  Undefined array key "id" in /home/qof8ecixsb37/public_html/info_order.php on line 6
+[03-Aug-2024 00:45:13 UTC] PHP Warning:  Undefined array key "id" in /home/qof8ecixsb37/public_html/user.php on line 3
+[03-Aug-2024 00:45:18 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/qof8ecixsb37/public_html/view_brand.php on line 47
+[03-Aug-2024 00:45:18 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/detail/detail_brand.php on line 51

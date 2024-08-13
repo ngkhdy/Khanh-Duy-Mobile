@@ -33,7 +33,7 @@
 								<h3><?php echo $value_cm['name'] ?></h3>
 								<span><?php echo $value_cm['created_at'] ?></span>
 							</div>
-							<p><?php echo $value_cm['content'] ?></p>
+							<p><?php echo strip_tags($value_cm['content']) ?></p>
 						</div>
 					</div>
 				<?php endforeach ?>
@@ -46,7 +46,7 @@
 								<h3><?php echo $value_cm['name'] ?></h3>
 								<span><?php echo $value_cm['created_at'] ?></span>
 							</div>
-							<p><?php echo $value_cm['content'] ?></p>
+							<p><?php echo strip_tags($value_cm['content']) ?></p>
 						</div>
 					</div>
 				<?php endforeach ?>

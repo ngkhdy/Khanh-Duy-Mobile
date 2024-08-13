@@ -1,0 +1,2 @@
+[03-Aug-2024 01:52:34 UTC] PHP Warning:  Undefined array key "lever" in /home/qof8ecixsb37/public_html/admin/partials/sidebar_view.php on line 25
+[03-Aug-2024 01:52:34 UTC] PHP Warning:  Undefined array key "fullname" in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 215

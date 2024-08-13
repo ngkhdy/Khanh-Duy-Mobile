@@ -5,19 +5,19 @@ require 'admin/root.php';
 
 // Phòng chống SQL Injection
 
-// if (isset($_POST)) {
-//     foreach ($_POST as $index => $value) {
-//         if (is_string($_POST[$index]))
-//             $_POST[$index] = htmlspecialchars($_POST[$index], ENT_QUOTES, "UTF-8");
-//     }
-// }
+if (isset($_POST)) {
+    foreach ($_POST as $index => $value) {
+        if (is_string($_POST[$index]))
+            $_POST[$index] = htmlspecialchars($_POST[$index], ENT_QUOTES, "UTF-8");
+    }
+}
 
-// if (isset($_GET)) {
-//     foreach ($_GET as $index => $value) {
-//         if (is_string($_GET[$index]))
-//             $_GET[$index] = htmlspecialchars($_GET[$index], ENT_QUOTES, "UTF-8");
-//     }
-// }
+if (isset($_GET)) {
+    foreach ($_GET as $index => $value) {
+        if (is_string($_GET[$index]))
+            $_GET[$index] = htmlspecialchars($_GET[$index], ENT_QUOTES, "UTF-8");
+    }
+}
 
 $email = $_POST['email'] ?? null;
 $email = strip_tags($email);
@@ -26,22 +26,22 @@ $password = strip_tags($password);
 
 // Chống tấn công SQL injection
 
-// if (empty($_POST['email']) || empty($_POST['password'])) {
-//     $_SESSION['error'] = 'Anh bạn à đừng hack nữa nhà mình còn gì đâu!!';
-//     header('location:login.php');
-//     exit;
-// }
-// if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-//     $_SESSION['error'] = 'Email này lạ quá';
-//     header('location:login.php');
-//     exit;
-// }
+if (empty($_POST['email']) || empty($_POST['password'])) {
+    $_SESSION['error'] = 'Anh bạn à đừng hack nữa nhà mình còn gì đâu!!';
+    header('location:login.php');
+    exit;
+}
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $_SESSION['error'] = 'Email này lạ quá';
+    header('location:login.php');
+    exit;
+}
 
-// if (isset($_POST['remember'])) {
-//     $remember = true;
-// } else {
-//     $remember = false;
-// }
+if (isset($_POST['remember'])) {
+    $remember = true;
+} else {
+    $remember = false;
+}
 
 $sql = "SELECT * from customers
 where `email` = '$email' and `password` = '$password'";
