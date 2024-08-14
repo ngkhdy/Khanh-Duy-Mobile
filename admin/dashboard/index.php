@@ -14,7 +14,9 @@ $sql = "SELECT COUNT(*) FROM `orders` WHERE DATE_FORMAT(created_at, '%Y-%m') = '
 $result = mysqli_query($connect, $sql);
 $totalMonth = mysqli_fetch_array($result)['COUNT(*)'];
 
-$sql = "SELECT SUM(total_price) as total FROM `orders` WHERE DATE_FORMAT(created_at, '%Y-%m-%d') >= (SELECT MIN(DATE_FORMAT(created_at, '%Y')) FROM `orders` WHERE status = 1 IN(DATE_FORMAT('$year', '%Y'))) AND status = 1";
+$sql = "SELECT SUM(total_price) as total FROM `orders` 
+        WHERE DATE_FORMAT(created_at, '%Y-%m-%d') >= (SELECT MIN(DATE_FORMAT(created_at, '%Y')) 
+        FROM `orders` WHERE status = 1 IN(DATE_FORMAT('$year', '%Y'))) AND status = 1";
 $result = mysqli_query($connect, $sql);
 $eachYear = mysqli_fetch_array($result);
 
