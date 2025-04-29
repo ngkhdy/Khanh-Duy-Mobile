@@ -60,8 +60,8 @@ if (!$resultCategories) {
 					?>
 						<div class="grid">
 							<div class="brands__heading">
-								<h1><?php echo $category['category_name']; ?></h1>
-								<p><?php echo $category['description']; ?></p>
+								<h1><?php echo $category['description']; ?></h1>
+					
 							</div>
 						</div>
 
@@ -105,6 +105,7 @@ if (!$resultCategories) {
 								<?php endforeach; ?>
 							</div>
 						</div>
+						<?php include 'pagination.php' ?>
 					<?php } ?>
 				<?php endwhile; ?>
 			</div>

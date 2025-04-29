@@ -4,9 +4,11 @@ require '../check_super_admin_login.php';
 
 $search = trim($_GET['search'] ?? null);
 
-$sqlPt = "SELECT count(id) as total FROM manufactures
-    WHERE
-    name LIKE '%$search%'";
+// Tính tổng số bản ghi
+$sqlPt = "SELECT count(manufactures.id) as total
+          FROM manufactures
+          LEFT JOIN categories ON manufactures.rules = categories.id
+          WHERE manufactures.name LIKE '%$search%'";
 
 $arrayNum = mysqli_query($connect, $sqlPt);
 $row = mysqli_fetch_assoc($arrayNum);
@@ -25,10 +27,14 @@ if ($current_page > $total_page) {
 
 $start = ($current_page - 1) * $limit;
 
-$sql = "SELECT * FROM `manufactures`
-        WHERE
-        manufactures.name LIKE '%$search%'
-        LIMIT $limit offset $start";
+// Lấy danh sách các hãng sản xuất cùng tên nhà phân phối
+$sql = "SELECT manufactures.*, categories.category_name
+        FROM manufactures
+        LEFT JOIN categories ON manufactures.rules = categories.id
+        WHERE manufactures.name LIKE '%$search%'
+        ORDER BY manufactures.id DESC
+        LIMIT $limit OFFSET $start";
+
 $result = mysqli_query($connect, $sql);
 if (empty($result)) {
 	header('location:../partials/404.php');
@@ -36,14 +42,13 @@ if (empty($result)) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
-
 	<?php
 	include '../partials/head_view.php';
 	?>
-	<title>Admin - manufacture</title>
+	<title>Admin - Quản lý hãng sản xuất</title>
 
 </head>
 
@@ -56,10 +61,10 @@ if (empty($result)) {
 		require '../menu.php';
 		?>
 
-		<h5 class="text-left mt-3">Quản lý nhãn hàng</h5>
+		<h5 class="text-left mt-3">Quản lý hãng sản xuất</h5>
 		<div class="row p-2">
-			<a class="btn btn-primary ml-2" href="form_insert.php"> Thêm </a>
-			<a class="btn btn-primary ml-2" href="index.php"> View all </a>
+			<a class="btn btn-primary ml-2" href="form_insert.php">Thêm</a>
+			<a class="btn btn-primary ml-2" href="index.php">Xem tất cả</a>
 			<form class="input-group ml-auto" style="width: 50%;">
 				<input class="form-control" type="search" placeholder="Tìm kiếm tên thương hiệu..." name="search" value="<?php echo $search ?>">
 			</form>
@@ -85,15 +90,15 @@ if (empty($result)) {
 								<tr>
 									<td class="text-primary"><?php echo $each['id']; ?></td>
 									<td><?php echo $each['name']; ?></td>
-									<?php if ($each['rules'] == 0) : ?>
-										<td>Nhà máy ngừng hoạt động</td>
-									<?php elseif ($each['rules'] == 1) : ?>
-										<td>Điện thoại</td>
-									<?php elseif ($each['rules'] == 2) : ?>
-										<td>Máy tính xách tay</td>
-									<?php elseif ($each['rules'] == 3) : ?>
-										<td>Điện thoại, Máy tính xách tay</td>
-									<?php endif ?>
+									<td>
+										<?php
+										if ($each['rules'] == 0) {
+											echo "Nhà máy ngừng hoạt động";
+										} else {
+											echo $each['category_name'];
+										}
+										?>
+									</td>
 									<td class="text-capitalize text-primary"><?php echo $each['address']; ?></td>
 									<td class="text-primary"><?php echo $each['phone']; ?></td>
 									<td>
@@ -118,13 +123,12 @@ if (empty($result)) {
 	</div>
 	<?php
 	include '../partials/footer_view.php';
-
 	include '../partials/js_link.php';
 	?>
 
 	<script>
 		function Del(name) {
-			return confirm("Bạn có chắc muốn xóa sản phẩm: " + name + " ?")
+			return confirm("Bạn có chắc muốn xóa sản phẩm: " + name + " ?");
 		}
 	</script>
 </body>

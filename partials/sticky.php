@@ -1,4 +1,5 @@
 <!-- dau -->
+	<link rel="icon" type="image/x-icon" href="./public/img/favicon.ico">
 <div class="header header-fixed">
 	<div class="header-container">
 		<header class="header-top">

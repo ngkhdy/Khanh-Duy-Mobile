@@ -26,8 +26,8 @@
     </div>
   </div>
  <h1 class="second-four">4</h1>
-  <p class="wrong-para">Uh Oh! Page not found!</p>
+  <p class="wrong-para">Oi oi oi! Không tìm thấy trang rồi!</p>
   <div class="wrong-para wrap">
-    <a href="./index.php">← Back to shop</a>
+    <a href="./index.php">← Quay lại Trang chủ</a>
   </div>
 </div>

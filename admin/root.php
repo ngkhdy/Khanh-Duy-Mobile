@@ -1,6 +1,6 @@
 <?php
 
-$connect = mysqli_connect('localhost', 'root', '', 'qof8ecixsb37_khanhduymobile');
+$connect = mysqli_connect('localhost', 'root', '', 'khanhduymobile');
 mysqli_set_charset($connect, 'UTF8');
 
 if ($connect === false) {

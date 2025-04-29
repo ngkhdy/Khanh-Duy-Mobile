@@ -14,12 +14,6 @@ $sql = "SELECT *
     JOIN products on products.id = order_detail.product_id
     WHERE order_id = '$order_id'";
 $result = mysqli_query($connect, $sql);
-
-$sql =  "SELECT * 
-    FROM order_detail
-    JOIN product_laptop on product_laptop.id = order_detail.product_lp_id
-    WHERE order_id = '$order_id'";
-$result_lp = mysqli_query($connect, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -97,28 +91,11 @@ $result_lp = mysqli_query($connect, $sql);
                                 </tr>
                             </thead>
                             <tbody class="thead-light">
-                                <?php foreach ($result_lp as $each) : ?>
-                                    <tr class="text-dark">
-                                        <td>
-                                            <img height="100" src="../product_laptop/server/uploads/<?php echo $each['photo'] ?>" alt="">
-                                        </td>
-                                        <td><?php echo $each['name'] ?></td>
-                                        <td class="text-primary"><?php echo $each['quantity'] ?></td>
-                                        <td class="text-danger"><?php echo currency_format($each['price']) ?></td>
-                                        <td class="text-danger">
-                                            <?php
-                                            $result_quantity = $each['price'] * $each['quantity'];
-                                            echo currency_format($result_quantity);
-                                            $sum += $result_quantity;
-                                            ?>
-                                        </td>
-                                    </tr>
-                                <?php endforeach ?>
+                                <tr>
+                                    <td colspan="5" class="text-center">Không có dữ liệu</td>
+                                </tr>
                             </tbody>
                         </table>
-                        <h6 class=" p-2 text-dark float-right">
-                            Tổng tiền hóa đơn là: $<span class="ml-1 text-danger"><?php echo currency_format($sum); ?></span>
-                        </h6>
                     </div>
                 <?php } ?>
             </div>

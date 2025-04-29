@@ -1,7 +1,7 @@
 <?php
 
 // Lấy tất cả các danh mục
-$sql = "SELECT * FROM `categories`";
+$sql = "SELECT * FROM categories";
 $result_categories = mysqli_query($connect, $sql);
 
 ?>
@@ -12,7 +12,7 @@ $result_categories = mysqli_query($connect, $sql);
 			<?php
 			// Lấy các nhà sản xuất theo danh mục hiện tại
 			$category_id = $category['id'];
-			$sql = "SELECT * FROM `manufactures` WHERE rules = $category_id";
+			$sql = "SELECT * FROM manufactures WHERE rules = $category_id";
 			$result_manufactures = mysqli_query($connect, $sql);
 			?>
 			<li class="menu-item">
@@ -20,7 +20,7 @@ $result_categories = mysqli_query($connect, $sql);
 				<ul class="menu-list-child">
 					<?php foreach ($result_manufactures as $each_manufacture) : ?>
 						<li class="menu-item">
-							<a href="view_brand.php?brand=<?php echo $each_manufacture['name']; ?>">
+							<a href="view_brand.php?id=<?php echo $each_manufacture['id']; ?>">
 								<?php echo $each_manufacture['name']; ?>
 							</a>
 						</li>

@@ -2,11 +2,8 @@
 	<nav class="breadcrumb_wrap">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><i class="fa-solid fa-house"></i><a href="./">Home</a></li>
-			<?php if (!empty($brand)) : ?>
-				<li class="breadcrumb-item"><a href="view_brand.php?mb=<?php echo $brand ?>"><?php echo $brand ?></a></li>
-			<?php endif; ?>
-			<?php if (!empty($brands)) : ?>
-				<li class="breadcrumb-item"><a href="view_brand.php?lp=<?php echo $brands ?>"><?php echo $brands ?></a></li>
+			<?php if (!empty($brand_id)) : ?>
+				<li class="breadcrumb-item"><a href="view_brand.php?id=<?php echo $manufacture['id']; ?>"><?php echo $manufacture['name']; ?></a></li>
 			<?php endif; ?>
 			<?php if (!empty($id)) : ?>
 				<li class="breadcrumb-item"><?php echo $each['name'] ?></li>

@@ -1,0 +1,1 @@
+[13-Aug-2024 15:06:49 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89

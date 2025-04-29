@@ -22,9 +22,9 @@ if(!empty($_SESSION['carts'])){
     $sql = "SELECT max(id) from orders where customer_id = '$customer_id'";
     $result = mysqli_query($connect, $sql);
     $order_id = mysqli_fetch_array($result)['max(id)'];
-    foreach($carts as $product_lp_id => $each){
+    foreach($carts as $product_id => $each){
         $quantity = $each['quantity'];
-        $sql = "INSERT INTO `order_detail`(order_id, product_id, product_lp_id, quantity) VALUES ('$order_id','0','$product_lp_id','$quantity')";
+        $sql = "INSERT INTO `order_detail`(order_id, product_id, quantity) VALUES ('$order_id','$product_id','$quantity')";
         mysqli_query($connect, $sql);
     }
     unset($_SESSION['carts']);

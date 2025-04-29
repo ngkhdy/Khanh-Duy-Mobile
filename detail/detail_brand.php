@@ -1,20 +1,20 @@
 <?php
 require 'admin/root.php';
-$brand = isset($_GET['mb']) ? $_GET['mb'] : '';
 
-$sqlPt = "SELECT
-    count(*)
-    FROM products
-    JOIN manufactures on products.manufacturer_id = manufactures.id
-    WHERE manufactures.name = '$brand'";
+$brand_id = isset($_GET['id']) ? mysqli_real_escape_string($connect, $_GET['id']) : '';
+
+$sqlPt = "SELECT COUNT(*) as total_records
+          FROM products
+          JOIN manufactures ON products.manufacturer_id = manufactures.id
+          WHERE manufactures.id = '$brand_id'";
+
 $arrayNum = mysqli_query($connect, $sqlPt);
 $row = mysqli_fetch_assoc($arrayNum);
-$total_records = $row['count(*)'];
+$total_records = $row['total_records'];
 
 $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
 $limit = 6;
-
-$total_page = ceil($total_records / $limit);
+$total_page = $total_records > 0 ? ceil($total_records / $limit) : 1;
 
 if ($current_page > $total_page) {
 	$current_page = $total_page;
@@ -24,16 +24,16 @@ if ($current_page > $total_page) {
 
 $start = ($current_page - 1) * $limit;
 
-$sql = "SELECT
-    products.*,
-    manufactures.name as manuf_name
-    FROM products
-    JOIN manufactures on products.manufacturer_id = manufactures.id
-    WHERE manufactures.name = '$brand'
-    ORDER BY `products`.`id`  DESC
-    LIMIT $limit offset $start";
+$sql = "SELECT products.*, manufactures.name as manuf_name
+        FROM products
+        JOIN manufactures ON products.manufacturer_id = manufactures.id
+        WHERE manufactures.id = '$brand_id'
+        ORDER BY products.id DESC
+        LIMIT $limit OFFSET $start";
+
 $result = mysqli_query($connect, $sql);
 ?>
+
 <div class="container">
 	<div class="grid_full-width">
 		<?php include './partials/menu.php' ?>
@@ -43,7 +43,7 @@ $result = mysqli_query($connect, $sql);
 				<?php include './partials/slider.php' ?>
 				<div class="grid">
 					<div class="brands__heading">
-						<h1>Dòng <?php echo $brand; ?> series</h1>
+						<h1> Điện Thoại <?php echo $manufacture['name']; ?> </h1>
 					</div>
 				</div>
 				<div class="grid">
@@ -89,7 +89,7 @@ $result = mysqli_query($connect, $sql);
 								<ul class="pagination">
 									<?php if ($current_page > 1 && $total_page > 1) { ?>
 										<li class="page-item">
-											<a class="page-link" href="view_brand.php?mb=<?php echo $brand ?>&page=<?php echo ($current_page - 1) ?>">Prev</a>
+											<a class="page-link" href="view_brand.php?mb=<?php echo $brand_id ?>&page=<?php echo ($current_page - 1) ?>">Prev</a>
 										</li>
 									<?php } ?>
 									<?php for ($i = 1; $i <= $total_page; $i++) { ?>
@@ -97,13 +97,13 @@ $result = mysqli_query($connect, $sql);
 											<?php if ($i == $current_page) { ?>
 												<span class="page-link text-muted"><?php echo  $i ?></span>
 											<?php } else { ?>
-												<a class="page-link" href="view_brand.php?mb=<?php echo $brand ?>&page=<?php echo  $i ?>"><?php echo  $i ?></a>
+												<a class="page-link" href="view_brand.php?mb=<?php echo $brand_id ?>&page=<?php echo  $i ?>"><?php echo  $i ?></a>
 											<?php } ?>
 										</li>
 									<?php } ?>
 									<?php if ($current_page < $total_page && $total_page > 1) { ?>
 										<li class="page-item">
-											<a class="page-link" href="view_brand.php?mb=<?php echo $brand ?>&page=<?php echo ($current_page + 1) ?>">Next</a>
+											<a class="page-link" href="view_brand.php?mb=<?php echo $brand_id ?>&page=<?php echo ($current_page + 1) ?>">Next</a>
 										</li>
 									<?php } ?>
 								</ul>
@@ -114,6 +114,5 @@ $result = mysqli_query($connect, $sql);
 			</div>
 			<?php include './partials/slidebar.php' ?>
 		</div>
-
 	</div>
 </div>

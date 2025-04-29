@@ -1,0 +1,42 @@
+[13-Aug-2024 05:35:49 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 08:11:19 UTC] PHP Warning:  Undefined array key "lever" in /home/qof8ecixsb37/public_html/admin/check_super_admin_login.php on line 3
+[13-Aug-2024 08:11:19 UTC] PHP Warning:  Undefined array key "lever" in /home/qof8ecixsb37/public_html/admin/partials/sidebar_view.php on line 25
+[13-Aug-2024 08:11:19 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 08:11:19 UTC] PHP Warning:  Undefined array key "fullname" in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 215
+[13-Aug-2024 15:26:44 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:11:58 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:12:02 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:12:09 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:12:14 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:12:18 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:12:25 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:26:24 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:26:26 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:26:28 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:27:20 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:27:28 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:27:32 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:27:41 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:38:37 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:44:33 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:44:39 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:44:41 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 16:45:30 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 17:12:46 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 17:12:50 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 17:12:52 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 17:13:58 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 17:23:12 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 17:23:15 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 17:23:19 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[13-Aug-2024 17:30:18 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[14-Aug-2024 02:40:58 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[14-Aug-2024 02:41:03 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[14-Aug-2024 02:41:15 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[14-Aug-2024 17:22:11 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[14-Aug-2024 17:28:28 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[14-Aug-2024 17:31:00 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[14-Aug-2024 17:31:56 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[14-Aug-2024 17:36:49 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[14-Aug-2024 17:37:14 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89
+[14-Aug-2024 17:37:18 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/qof8ecixsb37/public_html/admin/partials/navbar_view.php on line 89

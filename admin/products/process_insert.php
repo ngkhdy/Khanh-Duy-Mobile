@@ -8,7 +8,7 @@ $photo = $_FILES['photo'];
 $price = addslashes($_POST['price']);
 $price = strip_tags($price);
 
-$descriptions = trim(addslashes($_POST['descriptions']));
+$descriptions = ($_POST['descriptions']);
 $slug = trim(addslashes($_POST['slug']));
 
 $category_id = $_POST['category_id'];

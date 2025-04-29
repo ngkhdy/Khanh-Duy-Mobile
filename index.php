@@ -17,10 +17,18 @@ session_start();
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P3R7B42Q9Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-P3R7B42Q9Y');
+</script>
 </head>
+
 
 <body>
 	<div class="wrapper">
@@ -29,7 +37,6 @@ session_start();
 		<?php include './partials/footer.php' ?>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 	<!-- <script
     type="text/javascript"
     src="https://code.jquery.com/jquery-1.11.0.min.js"

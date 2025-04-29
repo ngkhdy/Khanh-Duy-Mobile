@@ -104,7 +104,7 @@ $sum_quantitys = 0;
 									<?php foreach ($carts as $id => $eachs) : ?>
 										<div class="row-table_cart">
 											<div class="col-table-p col-table-5">
-												<img height="200" src="admin/product_laptop/server/uploads/<?php echo $eachs['photo'] ?>" alt="">
+												<img height="200" src="admin/products/server/uploads/<?php echo $eachs['photo'] ?>" alt="">
 												<p><?php echo $eachs['name'] ?></p>
 											</div>
 											<div class="col-table-p col-table-1">

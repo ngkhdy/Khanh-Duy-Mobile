@@ -25,10 +25,6 @@
 													<img height="200" src="admin/products/server/uploads/<?php echo $each['image_product'] ?>" alt="">
 													<p><?php echo $each['name_product'] ?></p>
 												<?php endif ?>
-												<?php if (!empty($each['name_lp_product']) || !empty($each['image_lp_product'])) : ?>
-													<img height="200" src="admin/product_laptop/server/uploads/<?php echo $each['image_lp_product'] ?>" alt="">
-													<p><?php echo $each['name_lp_product'] ?></p>
-												<?php endif ?>
 											</div>
 											<div class="col-table-p col-table-2">
 												<span class="order-quantity">

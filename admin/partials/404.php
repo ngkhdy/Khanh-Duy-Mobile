@@ -22,9 +22,9 @@ require '../check_admin_login.php';
         <!-- 404 Error Text -->
         <div class="text-center">
             <div class="error mx-auto" data-text="404">404</div>
-            <p class="lead text-gray-800 mb-5">Page Not Found</p>
-            <p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
-            <a href="../dashboard/index.php">← Back to Dashboard</a>
+            <p class="lead text-gray-800 mb-5">Không tìm thấy trang</p>
+            <p class="text-gray-500 mb-0">Gặp lỗi gì đó rồi bạn ơi...</p>
+            <a href="../dashboard/index.php">← Quay lại Trang chủ</a>
         </div>
     </div>
 

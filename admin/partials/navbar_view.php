@@ -34,12 +34,11 @@
         products.name as mbi_name,
         products.photo as mbi_photo,
         order_detail.quantity,
-        product_laptop.name as lap_name,
-        product_laptop.photo as lap_photo
+        products.name as lap_name,
+        products.photo as lap_photo
         FROM order_detail
         LEFT JOIN orders ON orders.id = order_detail.order_id
-        LEFT JOIN products ON products.id = order_detail.product_id             
-        LEFT JOIN product_laptop ON product_laptop.id = order_detail.product_lp_id  
+        LEFT JOIN products ON products.id = order_detail.product_id  
         ORDER BY `orders`.`status` ASC , orders.id DESC
         LIMIT 4;";
         $result_tb = mysqli_query($connect, $sql_tb);
@@ -94,7 +93,7 @@
                                 <?php if(!empty($each_tb['mbi_photo'])){ ?>
                                     <img height="50" src="../products/server/uploads/<?php echo $each_tb['mbi_photo'] ?>" alt="">
                                 <?php }else{ ?>
-                                    <img height="50" src="../product_laptop/server/uploads/<?php echo $each_tb['lap_photo'] ?>" alt="">
+                                    <img height="50" src="../products/server/uploads/<?php echo $each_tb['lap_photo'] ?>" alt="">
                                 <?php } ?>
                             </div>
                         </div>
